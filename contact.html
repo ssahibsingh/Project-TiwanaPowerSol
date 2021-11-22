@@ -25,9 +25,9 @@
 <body>
     <div class="page-wrapper">
         <!-- Preloader -->
-        <div class="preloader">
+        <!-- <div class="preloader">
             <div class="icon"></div>
-        </div>
+        </div> -->
 
         <!-- Main Header -->
 
@@ -191,23 +191,22 @@
                 <div class="info-blocks">
                     <div class="row clearfix">
                         <!--Info Block-->
-                        <div class="info-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="2000ms">
-                            <div class="inner">
-                                <div class="icon"><img src="images/icons/icon-message-1.png" alt=""></div>
-                                <strong>Visit The Office</strong>
-                                <ul class="info">
-                                    <li>102 Taily End Road, NY <br>Newyork 33034</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--Info Block-->
                         <div class="info-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
                             <div class="inner">
                                 <div class="icon"><img src="images/icons/icon-call-1.png" alt=""></div>
                                 <strong>Phone Inquiry</strong>
                                 <ul class="info">
-                                    <li><a href="tel:+1-(222)-303-4500">+1 (222) 303 4500</a></li>
-                                    <li><a href="tel:0800-12345">0800 12345</a></li>
+                                    <li><a href="tel:+91987654321">+91 987654321</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Info Block-->
+                        <div class="info-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="2000ms">
+                            <div class="inner">
+                                <div class="icon"><img src="images/icons/icon-message-1.png" alt=""></div>
+                                <strong>Visit The Office</strong>
+                                <ul class="info">
+                                    <li>V.P.O. Lassoi, Malerkotla 148023, Punjab</li>
                                 </ul>
                             </div>
                         </div>
@@ -218,7 +217,6 @@
                                 <strong>Send Email</strong>
                                 <ul class="info">
                                     <li><a href="mailto:info@domain.com">info@domain.com</a></li>
-                                    <li><a href="mailto:Support@strnix.com">Support@strnix.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -228,7 +226,7 @@
                 <div class="content-box clearfix wow fadeInUp" data-wow-delay="0ms" data-wow-duration="2000ms">
                     <div class="form-box clearfix">
                         <div class="sec-title light-title">
-                            <h2>Don’t Hesitate To <br>Contact Us</h2>
+                            <h2>Don’t Hesitate To <br>Contact</h2>
                             <div class="bottom-dots clearfix">
                                 <span class="dot line-dot"></span>
                                 <span class="dot"></span>
@@ -237,26 +235,29 @@
                             </div>
                         </div>
                         <div class="default-form contact-form">
-                            <form method="post" action="../../external.html?link=http://t.commonsupport.xyz/strnix/sendemail.php" id="contact-form">
+                            <form method="post" autocomplete="off" name="Contact-Form" id="contact-form" onsubmit="return validateForm()">
                                 <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="text" name="username" placeholder="Your Name" required="">
+                                        <input type="text" name="name" id="name" placeholder="Name*" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="email" name="email" placeholder="Email" required="">
+                                        <input type="text" name="phone-number" id="phone-number" placeholder="Phone Number*" required>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <input type="email" id="email" name="email" placeholder="Email*" required>
                                     </div>
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="subject" placeholder="Subject" required="">
+                                        <input type="text" name="subject" id="subject" placeholder="Subject*" required>
                                     </div>
 
                                     <div class="col-md-12 col-sm-12 form-group">
-                                        <textarea name="message" placeholder="Message"></textarea>
+                                        <textarea name="message" id="message" placeholder="Message*"></textarea>
                                     </div>
 
                                     <div class="col-md-12 col-sm-12 form-group">
-                                        <button type="submit" class="theme-btn btn-style-eight"><div class="btn-title"><span class="btn-txt">Send Request</span><span class="btn-icon"><span class="icon flaticon-arrows-11"></span> </span></div></button>
+                                        <button name="submit" type="submit" id="submit" class="theme-btn btn-style-eight" onclick="alert('Please Wait...');"><div class="btn-title"><span class="btn-txt">Send Request</span><span class="btn-icon"><span class="icon flaticon-arrows-11"></span> </span></div></button>
                                     </div>
                                 </div>
                             </form>
@@ -275,17 +276,8 @@
                     </div>
                 </div>
             </div>
+            <br><br><br><br><br>
         </section>
-
-        <!--Map Section-->
-        <section class="map-section">
-            <!--Map Outer-->
-            <div class="map-outer">
-                <div class="map-canvas" data-zoom="12" data-lat="-37.817085" data-lng="144.955631" data-type="roadmap" data-hue="#ffc400" data-title="Envato" data-icon-path="images/icons/map-marker.png" data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
-                </div>
-            </div>
-        </section>
-        <!--End Map Section-->
 
         <!-- Main Footer -->
         <footer class="main-footer">
@@ -471,6 +463,27 @@
 
     </div>
     <!--End pagewrapper-->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxEQXnNIYNqyiJBKVTTAud4SB_C_2feF9I9mrIsRyHkROb8k6cC_3dONTnWs3ujwHD4/exec'
+        const form = document.forms['Contact-Form']
+
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(reponse => alert("Request Sent!"))
+                .catch(error => console.error('Error!', error.message))
+            resetFunc()
+        })
+
+        function resetFunc() {
+            document.getElementById("Contact-Form").reset();
+        }
+    </script>
+
 
     <script src="js/jquery.js"></script>
     <script src="js/popper.min.js"></script>
@@ -481,7 +494,7 @@
     <script src="js/appear.js"></script>
     <script src="js/wow.js"></script>
     <script src="js/scrollbar.js"></script>
-    <script src="js/validate.js"></script>
+    <!-- <script src="js/validate.js"></script> -->
     <script src="js/paroller.js"></script>
     <script src="js/element-in-view.js"></script>
     <script src="js/custom-script.js"></script>
@@ -491,6 +504,5 @@
 
 </body>
 
-<!-- Mirrored from t.commonsupport.xyz/strnix/contact.html by HTTrack Website Copier/3.x [XR&CO'2017], Sat, 13 Nov 2021 16:37:06 GMT -->
 
 </html>
