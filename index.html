@@ -621,31 +621,26 @@
 
                 <div class="content-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="2000ms">
                     <div class="default-form contact-form">
-                        <form method="post" action="../../external.html?link=http://t.commonsupport.xyz/strnix/contact.html">
+                        <form method="post" autocomplete="off" name="ContactForm">
                             <div class="row clearfix">
                                 <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                                    <input type="text" name="field-name" placeholder="Your Name" required="">
+                                    <input type="text" name="name" id="name" placeholder="Name*" required>
                                 </div>
 
                                 <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                                    <input type="email" name="field-name" placeholder="Email" required="">
+                                    <input type="email" name="email" id="email" placeholder="Email*" required>
                                 </div>
 
                                 <div class="col-lg-4 col-md-12 col-sm-12 form-group">
-                                    <input type="text" name="field-name" placeholder="Phone" required="">
+                                    <input type="text" name="phone" id="phone" placeholder="Phone*" required>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 form-group">
-                                    <select class="custom-select-box" name="field-name">
-                                    <option>Subject / Discuss About Service</option>
-                                    <option>Installation</option>
-                                    <option>Maintenance</option>
-                                    <option>Replacement</option>
-                                </select>
+                                    <input type="text" name="message" id="message" placeholder="Message*" required>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 form-group">
-                                    <button type="submit" class="theme-btn btn-style-one"><span class="btn-title"><span class="btn-txt">Send Request</span><span class="btn-icon"><span class="icon flaticon-arrows-11"></span> </span></span></button>
+                                    <button type="submit" id="submit" class="theme-btn btn-style-one" onclick="alert('Please Wait...');"><span class="btn-title"><span class="btn-txt">Send Request</span><span class="btn-icon"><span class="icon flaticon-arrows-11"></span> </span></span></button>
                                 </div>
                             </div>
                         </form>
@@ -815,6 +810,24 @@
 
     </div>
     <!--End pagewrapper-->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx6Pj1Lcwc3Y8znA3A3p5SRiZl0Jm_cGFIwkT_MAsxhHtYNGyjnni6GpV_FWLREQCX26g/exec'
+        const form = document.forms['ContactForm']
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => alert("We will Get in touch with you soon!"))
+                .catch(error => console.error('Error!', error.message))
+            resetFunc()
+        })
+
+        function resetFunc() {
+            document.getElementById("ContactForm").reset();
+        }
+    </script>
 
     <script src="js/jquery.js "></script>
     <script src="js/popper.min.js "></script>
