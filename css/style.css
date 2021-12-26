@@ -4441,7 +4441,8 @@ img.lazy-image.loaded {
     color: #406fe6;
 }
 
-.program-block .image-box:before {
+
+/* .program-block .image-box:before {
     content: '';
     position: absolute;
     display: block;
@@ -4466,9 +4467,10 @@ img.lazy-image.loaded {
     -ms-transition: all 400ms ease;
     -o-transition: all 400ms ease;
     transition: all 400ms ease;
-}
+} */
 
-.program-block .hover-box {
+
+/* .program-block .hover-box {
     position: absolute;
     display: block;
     left: 0;
@@ -4500,7 +4502,7 @@ img.lazy-image.loaded {
     -ms-transition: all 500ms ease 400ms;
     -o-transition: all 500ms ease 400ms;
     transition: all 500ms ease 400ms;
-}
+} */
 
 .program-block .hover-inner {
     position: absolute;
