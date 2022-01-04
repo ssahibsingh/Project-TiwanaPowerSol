@@ -1,6 +1,3 @@
-/* Strnix - Green Energy HTML Template  */
-
-
 /*********** TABLE OF CONTENTS **************
 1. Fonts
 2. Reset
@@ -78,6 +75,12 @@ font-family: 'Merriweather', serif;
     font-weight: normal;
     font-style: normal;
     font-display: block;
+}
+
+.scrolling-text {
+    color: #5781E9;
+    font-size: 2vw;
+    padding: 1vw;
 }
 
 
